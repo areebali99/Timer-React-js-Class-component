@@ -6,19 +6,20 @@ class App extends Component {
     super(props);
     this.state={seconds:0};
 }
+ 
 onStart=()=>{
    this.setState({seconds:this.state.seconds+1});
 }
 timer=()=>{
   this.f=setInterval(this.onStart,1000);
-  document.getElementById('btn').disabled=false;
+  
 }
 onPause=()=>{
     clearInterval(this.f);
 }
 onReset=()=>{
     clearInterval(this.f);
-    document.getElementById('btn').disabled=false;
+    
     this.setState({seconds:0})
 }
 render(){
