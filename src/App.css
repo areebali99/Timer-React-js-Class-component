@@ -40,7 +40,8 @@ h1{
   margin-left: 100px;
 }
 .timer{
-  width: 30%;
+  margin-left: 550px;
+  width: 250px;
   background-color: #61dafb;
 }
 .startBtn{

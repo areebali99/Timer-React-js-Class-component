@@ -24,12 +24,16 @@ onReset=()=>{
 }
 render(){
     return(
+      <>
+    
         <div className="timer">
+          
             <h1>{this.state.seconds}</h1>
             <button id='btn' className="startBtn" onClick={this.timer}>Start</button>
             <button  className="stopBtn" onClick={this.onPause}>Stop</button>
             <button className="resetBtn" onClick={this.onReset}>Reset</button>
         </div>
+        </>
     )
 }
 }
