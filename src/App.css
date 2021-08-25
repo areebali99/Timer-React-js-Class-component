@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+h1{
+  margin-left: 100px;
+}
+.timer{
+  width: 30%;
+  background-color: #61dafb;
+}
+.startBtn{
+  color: white;
+  background-color: green;
+}
+.stopBtn{
+  color: white;
+  margin-left: 50px;
+  background-color: red;
+}
+.resetBtn{
+  color: white;
+  margin-left: 50px;
+  background-color: purple;
+}

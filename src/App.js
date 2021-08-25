@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from 'react'
+import './App.css'
+class App extends Component {
+  constructor(props){
+    super(props);
+    this.state={seconds:0};
 }
+onStart=()=>{
+   this.setState({seconds:this.state.seconds+1});
+}
+timer=()=>{
+  this.f=setInterval(this.onStart,1000);
+  document.getElementById('btn').disabled=false;
+}
+onPause=()=>{
+    clearInterval(this.f);
+}
+onReset=()=>{
+    clearInterval(this.f);
+    document.getElementById('btn').disabled=false;
+    this.setState({seconds:0})
+}
+render(){
+    return(
+        <div className="timer">
+            <h1>{this.state.seconds}</h1>
+            <button id='btn' className="startBtn" onClick={this.timer}>Start</button>
+            <button  className="stopBtn" onClick={this.onPause}>Stop</button>
+            <button className="resetBtn" onClick={this.onReset}>Reset</button>
+        </div>
+    )
+}
+}
+export default App
 
-export default App;
